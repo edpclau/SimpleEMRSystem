@@ -230,3 +230,4 @@ class displayparams(models.Model):
     class Meta:
         db_table = u'displayparams'
 
+

@@ -7,13 +7,24 @@
 
     <style type="text/css">
         .info-div {
-            padding-left: 10px;
-            padding-right: 10px;
-            width: 1200px;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 10px;
             background-color: #DCDCDC;
             text-align: left;
             border-radius: 3px;
+            width: 90%;
         }
+        {% comment %} Resonsiveness adjustments so page adjusts to screen size {% endcomment %}
+        @media screen and (max-width: 800px) {
+            .info-div, table {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0px;
+                width: 100%; /* Full width on very small screens */
+            }
+        }
+
         </style>
 
     <script src="/static/jcode/jquery.js"></script>

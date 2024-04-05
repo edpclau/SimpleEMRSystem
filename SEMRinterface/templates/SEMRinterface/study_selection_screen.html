@@ -7,30 +7,41 @@
 
     <style type="text/css">
         .info-div {
-            padding-left: 10px;
-            padding-right: 10px;
-            width: 1200px;
+            margin-left: 5%;
+            margin-right: 5%;
+            padding: 10px;
             background-color: #DCDCDC;
             text-align: left;
             border-radius: 3px;
+            width: 90%;
         }
+        {% comment %} Resonsiveness adjustments so page adjusts to screen size {% endcomment %}
+      @media screen and (max-width: 800px) {
+            .info-div, table {
+                margin-left: 0;
+                margin-right: 0;
+                padding: 0px;
+                width: 100%; /* Full width on very small screens */
+            }
+        }
+
         </style>
 
     <script src="/static/jcode/jquery.js"></script>
     <script>
-    $(document).ready(function(){
-        is_full_screen();
-    });
-
-    function is_full_screen(){
-    // +1 is because firefox add an bar of pixel height 1 to the top of full screen that pops down the menu bar
-    // the pop down functionality is disabled when F11 is pressed three times.
-    if(screen.width === window.innerWidth && screen.height === window.innerHeight){
-        $('#fs').hide();
-    }else{
-        $('#fs').show();
-    }}
-    </script>
+        $(document).ready(function(){
+            is_full_screen();
+            $(window).resize(is_full_screen); // Adjust full screen check on window resize
+        });
+    
+        function is_full_screen(){
+            if(screen.width === window.innerWidth && screen.height === window.innerHeight){
+                $('#fs').hide();
+            }else{
+                $('#fs').show();
+            }
+        }
+        </script>
 
 </head>
 <body bgcolor="#E6E6FA">
